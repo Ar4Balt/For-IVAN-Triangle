@@ -1,5 +1,6 @@
 #pragma once
 
+//класс для упрощения создания класса Triangle
 class Point {
 private:
     double X = 0.0;

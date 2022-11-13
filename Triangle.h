@@ -4,6 +4,7 @@
 
 #include <string>
 #include <math.h>
+#include <iostream>
 
 using namespace std;
 
@@ -38,6 +39,7 @@ public:
 		this->Type = Type;
 	}
 
+	//вывод координат точки
 	Point getA() {
 		return A;
 	}
@@ -64,27 +66,32 @@ public:
 		Type = type;
 	}
 
+	//выводит координаты точек(было лень делать через operator)
 	void getAp(){
-		cout << "X = " << A.getX() << "; Y = " << A.getY() << endl;
+		std::cout << "X = " << A.getX() << "; Y = " << A.getY() << endl;
 	}
 	void getBp() {
 		cout << "X = " << B.getX() << "; Y = " << B.getY();
 	}
 	void getCp() {
-		cout << "X = " << C.getX() << "; Y = " << C.getY();
+		std::cout << "X = " << C.getX() << "; Y = " << C.getY();
 	}
 
+	//высчитывание длинны стороны
 	double Side(Point, Point);
+	//периметр
 	double getPerimetr(Triangle);
+	//выбор вида треугольника по сторонам
 	void selection(double, double, double);
 	
+	//вывод полной информации об треугольнике 
 	void Print() {
-		cout << "Points:\n A = "; getAp();
-		cout << "B = "; getBp();
-		cout << "C = "; getCp();
-		cout << "Sides:\n AB = " << AB << std::endl
-			<< "BC = " << BC << std::endl
-			<< "CA = " << CA << std::endl
-			<< "Type: \"" << Type << "\"\n" ;
+		std::cout << "Points:\n A = "; getAp();
+		std::cout << "B = "; getBp();
+		std::cout << "C = "; getCp();
+		std::cout << "Sides:\n AB = " << AB << endl
+			<< "BC = " << BC << endl
+			<< "CA = " << CA << endl
+			<< "Type: \"" << Type << "\"\n";
 	}
 };
