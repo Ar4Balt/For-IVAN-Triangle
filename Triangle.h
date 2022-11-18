@@ -2,9 +2,9 @@
 
 #include "Point.h"
 
+#include <iostream>
 #include <string>
 #include <math.h>
-#include <iostream>
 
 using namespace std;
 
@@ -15,7 +15,8 @@ private:
 		C;
 	double AB,
 		BC,
-		CA;
+		CA,
+		Perimetr;
 	string Type;
 public:
 	Triangle() {
@@ -53,28 +54,67 @@ public:
 		return Type;
 	}
 
-	void setB(Point b) {
-		B = b;
-	}
 	void setA(Point a) {
 		A = a;
+	}
+	void setB(Point b) {
+		B = b;
 	}
 	void setC(Point c) {
 		C = c;
 	}
+	void setA(double a_x, double a_y) {
+		Point point(a_x, a_y);
+		A = point;
+	}
+	void setB(double b_x, double b_y) {
+		Point point(b_x, b_y);
+		B = point;
+	}
+	void setC(double c_x, double c_y) {
+		Point point(c_x, c_y);
+		C = point;
+	}
+
 	void setType(string type) {
 		Type = type;
 	}
 
 	//выводит координаты точек(было лень делать через operator)
 	void getAp(){
-		std::cout << "X = " << A.getX() << "; Y = " << A.getY() << endl;
+		cout << "X = " << A.getX() << "; Y = " << A.getY() << endl;
 	}
 	void getBp() {
 		cout << "X = " << B.getX() << "; Y = " << B.getY();
 	}
 	void getCp() {
-		std::cout << "X = " << C.getX() << "; Y = " << C.getY();
+		cout << "X = " << C.getX() << "; Y = " << C.getY() << endl;
+	}
+
+	double getAB() {
+		return AB;
+	}
+	double getBC() {
+		return BC;
+	}
+	double getCA() {
+		return CA;
+	}
+	void setAB(double ab) {
+		this->AB = ab;
+	}
+	void setBC(double bc) {
+		this->BC = bc;
+	}
+	void setCA(double ca) {
+		this->CA = ca;
+	}
+
+	void setPerimetr(double p) {
+		this->Perimetr = p;
+	}
+	double setPerimetr() {
+		return Perimetr;
 	}
 
 	//высчитывание длинны стороны
@@ -86,10 +126,10 @@ public:
 	
 	//вывод полной информации об треугольнике 
 	void Print() {
-		std::cout << "Points:\n A = "; getAp();
-		std::cout << "B = "; getBp();
-		std::cout << "C = "; getCp();
-		std::cout << "Sides:\n AB = " << AB << endl
+		cout << "Points:\nA = "; getAp();
+		cout << "B = "; getBp();
+		cout << "\nC = "; getCp();
+		cout << "Sides:\nAB = " << AB << endl
 			<< "BC = " << BC << endl
 			<< "CA = " << CA << endl
 			<< "Type: \"" << Type << "\"\n";

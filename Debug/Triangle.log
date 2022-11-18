@@ -1,6 +1,2 @@
 ﻿  Main.cpp
-  Triangle.cpp
-D:\Visual Studio\Triangle\Triangle\Triangle.cpp(24,10): warning C4554: "^": проверьте приоритет операторов на ошибки; для уточнения приоритета используйте скобки
-D:\Visual Studio\Triangle\Triangle\Triangle.cpp(24,41): warning C4554: "^": проверьте приоритет операторов на ошибки; для уточнения приоритета используйте скобки
-  Создание кода...
   Triangle.vcxproj -> D:\Visual Studio\Triangle\Debug\Triangle.exe
